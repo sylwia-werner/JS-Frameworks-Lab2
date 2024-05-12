@@ -14,7 +14,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    border: 1px solid #999;
+    border: 1px solid #ced4da;
     border-radius: ${pxToRem(3)};
     padding: ${pxToRem(4)};
     font-size: ${pxToRem(14)};
