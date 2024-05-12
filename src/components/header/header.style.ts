@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
     padding: 2rem 1rem;
-    background-color: #fedfdd;
+    background-color: white;
 `;
 
 export const List = styled.ul`

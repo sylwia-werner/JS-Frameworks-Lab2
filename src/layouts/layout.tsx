@@ -6,9 +6,9 @@ interface Props {
 }
 export const Layout = ({ children }: Props) => {
     return (
-        <div>
+        <S.Container>
             <Header />
             <S.Main className="main">{children}</S.Main>
-        </div>
+        </S.Container>
     );
 };
