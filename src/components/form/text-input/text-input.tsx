@@ -9,6 +9,7 @@ interface Props {
     name: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value: string;
+    maxLength?: number;
 }
 export const TextInput = ({
     id,
@@ -17,6 +18,7 @@ export const TextInput = ({
     fullWidth = false,
     name,
     value,
+    maxLength,
     onChange,
 }: Props) => {
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -31,6 +33,7 @@ export const TextInput = ({
                 type="text"
                 value={value}
                 onChange={handleChange}
+                maxLength={maxLength}
             />
             <S.ErrorLabel>{error}</S.ErrorLabel>
         </S.Container>

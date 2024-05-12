@@ -1,3 +1,5 @@
+import * as S from "./table.style";
+
 interface Column<T> {
     key: keyof T;
     header: string;
@@ -6,29 +8,39 @@ interface Column<T> {
 interface Props<T> {
     columns: Column<T>[];
     data: T[];
+    footData?: string | number;
 }
 
-export function Table<T>({ columns, data }: Props<T>) {
+export function Table<T>({ columns, data, footData }: Props<T>) {
     return (
-        <table>
-            <thead>
-                <tr>
+        <S.Table>
+            <S.Thead>
+                <S.TrHead>
                     {columns.map((column, index) => (
-                        <th key={`${index}-${String(column.key)}`}>
+                        <S.Th key={`${index}-${String(column.key)}`}>
                             {column.header}
-                        </th>
+                        </S.Th>
                     ))}
-                </tr>
-            </thead>
+                </S.TrHead>
+            </S.Thead>
             <tbody>
                 {data.map((row, rowIndex) => (
-                    <tr key={rowIndex}>
+                    <S.Tr key={rowIndex}>
                         {columns.map((column, colIndex) => (
-                            <td key={colIndex}>{String(row[column.key])}</td>
+                            <S.Td key={colIndex}>
+                                {String(row[column.key])}
+                            </S.Td>
                         ))}
-                    </tr>
+                    </S.Tr>
                 ))}
             </tbody>
-        </table>
+            {footData ? (
+                <S.TFoot>
+                    <S.Tr>
+                        <S.Td colSpan={columns.length}>{footData}</S.Td>
+                    </S.Tr>
+                </S.TFoot>
+            ) : null}
+        </S.Table>
     );
 }

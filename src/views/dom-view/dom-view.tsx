@@ -13,6 +13,8 @@ export const DomView = () => {
     return (
         <Layout>
             <S.Container>
+                <h1>Zad. 1</h1>
+
                 <S.RangeInput
                     type="range"
                     min="10"
