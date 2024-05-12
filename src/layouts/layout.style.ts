@@ -9,6 +9,10 @@ export const Main = styled.main`
     max-width: 100%;
     padding: 2rem;
     margin: auto;
+
+    @media (max-width: 800px) {
+        padding: 2rem 1rem;
+    }
 `;
 
 export const Container = styled.div`

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import * as S from "./number-input.style";
 
 interface Props {
@@ -9,6 +9,10 @@ interface Props {
     name: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value: number;
+    minLength?: number;
+    maxLength?: number;
+    groupText?: string;
+    required?: boolean;
 }
 export const NumberInput = ({
     id,
@@ -17,21 +21,53 @@ export const NumberInput = ({
     fullWidth = false,
     name,
     value,
+    minLength,
+    maxLength,
+    groupText,
     onChange,
+    required,
 }: Props) => {
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         onChange(e);
     };
     return (
-        <S.Container $fullWidth={fullWidth}>
+        <S.Container>
             <S.Label htmlFor={id}>{label}</S.Label>
-            <S.Input
-                id={id}
-                name={name}
-                type="number"
-                value={value}
-                onChange={handleChange}
-            />
+
+            {groupText ? (
+                <S.GroupContainer $fullWidth={fullWidth}>
+                    <S.Input
+                        id={id}
+                        name={name}
+                        type="number"
+                        value={value}
+                        onChange={handleChange}
+                        min={minLength}
+                        max={maxLength}
+                        $fullWidth={fullWidth}
+                        $group={!!groupText}
+                        step="0.01"
+                        required={required}
+                    />
+                    <S.GroupBox>
+                        <S.GroupText>{groupText}</S.GroupText>
+                    </S.GroupBox>
+                </S.GroupContainer>
+            ) : (
+                <S.Input
+                    id={id}
+                    name={name}
+                    type="number"
+                    value={value}
+                    onChange={handleChange}
+                    min={minLength}
+                    max={maxLength}
+                    $fullWidth={fullWidth}
+                    step="0.01"
+                    required={required}
+                />
+            )}
+
             <S.ErrorLabel>{error}</S.ErrorLabel>
         </S.Container>
     );
