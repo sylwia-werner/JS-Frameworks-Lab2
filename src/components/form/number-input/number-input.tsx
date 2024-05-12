@@ -12,6 +12,7 @@ interface Props {
     minLength?: number;
     maxLength?: number;
     groupText?: string;
+    required?: boolean;
 }
 export const NumberInput = ({
     id,
@@ -24,6 +25,7 @@ export const NumberInput = ({
     maxLength,
     groupText,
     onChange,
+    required,
 }: Props) => {
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         onChange(e);
@@ -45,6 +47,7 @@ export const NumberInput = ({
                         $fullWidth={fullWidth}
                         $group={!!groupText}
                         step="0.01"
+                        required={required}
                     />
                     <S.GroupBox>
                         <S.GroupText>{groupText}</S.GroupText>
@@ -61,6 +64,7 @@ export const NumberInput = ({
                     max={maxLength}
                     $fullWidth={fullWidth}
                     step="0.01"
+                    required={required}
                 />
             )}
 

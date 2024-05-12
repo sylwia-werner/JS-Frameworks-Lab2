@@ -79,6 +79,7 @@ export const FormView = () => {
                             label="Name"
                             maxLength={20}
                             fullWidth
+                            required
                         />
                         <NumberInput
                             id="Width"
@@ -92,6 +93,7 @@ export const FormView = () => {
                             maxLength={1000}
                             groupText="cm"
                             fullWidth
+                            required
                         />
                         <NumberInput
                             id="Height"
@@ -105,6 +107,7 @@ export const FormView = () => {
                             maxLength={1000}
                             groupText="cm"
                             fullWidth
+                            required
                         />
                         <NumberInput
                             id="Depth"
@@ -118,6 +121,7 @@ export const FormView = () => {
                             maxLength={1000}
                             groupText="cm"
                             fullWidth
+                            required
                         />
                     </S.InputContainer>
                     <S.ButtonContainer>
