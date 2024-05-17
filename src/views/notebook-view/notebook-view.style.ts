@@ -25,7 +25,7 @@ export const EditorPanel = styled.div`
     }
 `;
 
-export const InputContainer = styled.div`
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -33,4 +33,23 @@ export const InputContainer = styled.div`
 `;
 export const List = styled.ul`
     padding-left: 1rem;
+`;
+
+export const ListButton = styled.button`
+    border: none;
+    width: 100%;
+    overflow: visible;
+    background: transparent;
+    line-height: normal;
+    text-align: left;
+
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    &:hover {
+        color: #007bff;
+    }
 `;

@@ -19,7 +19,6 @@ export const Button = styled.button<{ variant: string }>`
             border-color: ${variant === "primary" ? "#0069d9" : "#5a6268"};
         }
     `}
-
     padding: ${pxToRem(6)} ${pxToRem(12)};
     color: white;
     border-radius: ${pxToRem(4)};

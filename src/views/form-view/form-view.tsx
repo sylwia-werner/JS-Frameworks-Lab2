@@ -3,8 +3,8 @@ import { TextInput } from "../../components/form/text-input/text-input";
 import { Layout } from "../../layouts/layout";
 import { NumberInput } from "../../components/form/number-input/number-input";
 import * as S from "./form-view.style";
-import { Button } from "../../components/button/button.style";
 import { Table } from "../../components/table/table";
+import { Button } from "../../components/button/button";
 
 type TableData = {
     name: string;

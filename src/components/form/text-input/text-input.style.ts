@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { pxToRem } from "../../../utils/pxToRem";
 
-export const Container = styled.div<{ $fullWidth: boolean }>`
+export const Container = styled.div<{ $fullwidth: boolean }>`
     display: flex;
     flex-direction: column;
-    width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "auto")};
+    width: ${({ $fullwidth }) => ($fullwidth ? "100%" : "auto")};
 `;
 
 export const Label = styled.label`

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import * as S from "./text-input.style";
 
 interface Props {
@@ -27,7 +27,7 @@ export const TextInput = ({
         onChange(e);
     };
     return (
-        <S.Container $fullWidth={fullWidth}>
+        <S.Container $fullwidth={fullWidth}>
             <S.Label htmlFor={id}>{label}</S.Label>
             <S.Input
                 id={id}
