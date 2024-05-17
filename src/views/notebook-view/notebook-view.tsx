@@ -63,8 +63,6 @@ export const NotebookView = () => {
                 const updatedNotes = [...notes];
                 updatedNotes[editedNoteIndex] = { ...form, id: editNote.id };
 
-                console.log(updatedNotes, "UPDATED");
-
                 setNotes(updatedNotes);
 
                 setEditNote(null);
@@ -74,8 +72,6 @@ export const NotebookView = () => {
             }
             return;
         }
-
-        console.log("save new");
 
         setNotes((prevData) => [...prevData, { ...form, id: uuidv4() }]);
 
