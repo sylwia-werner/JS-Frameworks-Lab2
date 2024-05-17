@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import * as S from "./text-input.style";
+import * as S from "./textarea.style";
 
 interface Props {
     id: string;
@@ -7,12 +7,13 @@ interface Props {
     error?: string;
     fullWidth: boolean;
     name: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     value: string;
     maxLength?: number;
     required?: boolean;
+    minHeight?: number;
 }
-export const TextInput = ({
+export const TextArea = ({
     id,
     label,
     error,
@@ -22,21 +23,22 @@ export const TextInput = ({
     maxLength,
     onChange,
     required,
+    minHeight,
 }: Props) => {
-    const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
         onChange(e);
     };
     return (
-        <S.Container $fullwidth={fullWidth}>
+        <S.Container $fullWidth={fullWidth}>
             <S.Label htmlFor={id}>{label}</S.Label>
             <S.Input
                 id={id}
                 name={name}
-                type="text"
                 value={value}
                 onChange={handleChange}
                 maxLength={maxLength}
                 required={required}
+                $minHeight={minHeight}
             />
             <S.ErrorLabel>{error}</S.ErrorLabel>
         </S.Container>

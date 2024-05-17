@@ -6,6 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
+    overflow-x: auto;
 `;
 
 export const RangeInput = styled.input`
